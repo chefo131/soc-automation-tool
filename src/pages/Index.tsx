@@ -60,7 +60,7 @@ const Index = () => {
           </div>
 
           <h1 className="text-5xl md:text-7xl font-heading font-bold text-foreground mb-6 glow-text leading-tight">
-            SOC <span className="text-primary">Automation</span>
+            Goyo SOC <span className="text-primary">Generator</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 font-mono leading-relaxed">
             Generador de scripts para{" "}
@@ -152,7 +152,7 @@ const Index = () => {
       <footer className="relative z-10 py-10 px-4 border-t border-border">
         <div className="max-w-5xl mx-auto text-center space-y-2">
           <p className="text-sm font-heading font-bold text-foreground glow-text-soft">
-            By <span className="text-primary">Sistemas 127</span>
+            By <span className="text-primary">Goyo Security & Sistemas 127</span>
           </p>
           <p className="text-xs font-mono text-muted-foreground">
 
