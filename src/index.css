@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 25% 6%;
+    --foreground: 210 40% 90%;
+    --card: 220 25% 9%;
+    --card-foreground: 210 30% 88%;
+    --popover: 220 25% 9%;
+    --popover-foreground: 210 30% 88%;
+    --primary: 210 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 200 90% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 20% 14%;
+    --muted-foreground: 220 15% 55%;
+    --accent: 230 80% 65%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 30% 18%;
+    --input: 220 20% 16%;
+    --ring: 210 100% 55%;
+    --radius: 0.75rem;
+    --cyber-glow: 210 100% 55%;
+    --cyber-blue: 200 90% 50%;
+    --cyber-purple: 230 80% 65%;
+    --cyber-dark: 220 25% 4%;
+    --cyber-terminal: 200 100% 60%;
+    --warning: 45 100% 55%;
+    --warning-foreground: 220 20% 7%;
+    --sidebar-background: 220 25% 9%;
+    --sidebar-foreground: 210 30% 88%;
+    --sidebar-primary: 210 100% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 14%;
+    --sidebar-accent-foreground: 210 30% 88%;
+    --sidebar-border: 215 30% 18%;
+    --sidebar-ring: 210 100% 55%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground font-body antialiased; }
+  h1, h2, h3, h4, h5, h6 { @apply font-heading; }
+  code, pre, .font-mono { font-family: 'JetBrains Mono', monospace; }
+}
+
+@layer utilities {
+  .glow-blue { box-shadow: 0 0 20px hsl(210 100% 55% / 0.4), 0 0 60px hsl(210 100% 55% / 0.15), 0 0 100px hsl(210 100% 55% / 0.05); }
+  .glow-blue-soft { box-shadow: 0 0 15px hsl(200 90% 50% / 0.25), 0 0 40px hsl(200 90% 50% / 0.1); }
+  .glow-text { text-shadow: 0 0 20px hsl(210 100% 55% / 0.6), 0 0 40px hsl(210 100% 55% / 0.3), 0 0 80px hsl(210 100% 55% / 0.1); }
+  .glow-text-soft { text-shadow: 0 0 10px hsl(200 90% 50% / 0.4), 0 0 30px hsl(200 90% 50% / 0.15); }
+  .terminal-bg { background: linear-gradient(135deg, hsl(220 25% 4%) 0%, hsl(220 25% 9%) 100%); }
+  .cyber-gradient { background: linear-gradient(135deg, hsl(210 100% 55% / 0.08) 0%, hsl(200 90% 50% / 0.08) 50%, hsl(230 80% 65% / 0.08) 100%); }
+  .hero-gradient {
+    background: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210 100% 55% / 0.15), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 50%, hsl(230 80% 65% / 0.08), transparent),
+                radial-gradient(ellipse 60% 40% at 20% 50%, hsl(200 90% 50% / 0.08), transparent);
+  }
+  .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 0 30px hsl(210 100% 55% / 0.2), 0 20px 40px hsl(220 25% 4% / 0.5); border-color: hsl(210 100% 55% / 0.4); }
+  .blink-warning { animation: blink 1s ease-in-out infinite; }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  @keyframes scan-line { 0% { transform: translateY(-100%); } 100% { transform: translateY(100vh); } }
+  @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+  @keyframes pulse-ring { 0% { transform: scale(0.8); opacity: 1; } 100% { transform: scale(2); opacity: 0; } }
+  .animate-float { animation: float 6s ease-in-out infinite; }
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(210 100% 55% / 0.4), transparent);
+    animation: scan-line 4s linear infinite;
+    pointer-events: none;
+  }
+  .grid-pattern {
+    background-image: linear-gradient(hsl(210 100% 55% / 0.03) 1px, transparent 1px), linear-gradient(90deg, hsl(210 100% 55% / 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .gradient-border { position: relative; }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(210 100% 55% / 0.5), hsl(230 80% 65% / 0.5), hsl(200 90% 50% / 0.5));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
