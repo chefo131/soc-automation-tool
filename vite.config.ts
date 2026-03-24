@@ -4,7 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  base: "/soc-automation-generator/",
+  base: "/soc-automation-tool/",
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
