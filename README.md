@@ -1,8 +1,8 @@
-# 🛡️ Goyo SOC Generator
+# 🛡️ SOC Generator
 
 Generador automático de scripts de instalación para plataformas de seguridad SOC (Security Operations Center).
 
-**Customized by Goyo & Sistemas 127**
+**Customized  & Sistemas 127**
 
 ## 📋 Tabla de Contenidos
 

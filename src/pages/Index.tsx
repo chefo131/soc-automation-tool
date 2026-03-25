@@ -152,7 +152,7 @@ const Index = () => {
       <footer className="relative z-10 py-10 px-4 border-t border-border">
         <div className="max-w-5xl mx-auto text-center space-y-2">
           <p className="text-sm font-heading font-bold text-foreground glow-text-soft">
-            By <span className="text-primary">Goyo Security & Sistemas 127</span>
+            By <span className="text-primary">Security & Sistemas 127</span>
           </p>
           <p className="text-xs font-mono text-muted-foreground">
 
